@@ -12,17 +12,16 @@ const sequelize = new Sequelize(
 
 );
 
-try {
+
     (async() =>{
+        try {
         await sequelize.authenticate();
         console.log("La conexion se ha establecido correctamente");
-    }
-    )();
-    
-} catch (error) {
+    } catch (error) {
     console.error("Error al conectar con la DB:", error)
+    }
+})();
     
-}
 
 require("./models")(sequelize)
 
