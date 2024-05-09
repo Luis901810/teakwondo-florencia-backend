@@ -9,7 +9,6 @@ const sequelize = new Sequelize(
         logging: false,
         native: false,
     },
-
 );
 
 
@@ -23,7 +22,7 @@ const sequelize = new Sequelize(
 })();
     
 
-require("./models")(sequelize)
+require("./models/relacionesDB")(sequelize)
 
 module.exports = {
 
