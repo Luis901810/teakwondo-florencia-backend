@@ -8,15 +8,15 @@ module.exports = async payload =>{
         email,
         phoneNumber,
         password,
-        birtData,
+        birthDate,
         profilePinture,
         genderId,
         roleId,
         statusId,
         authMethodId,
-        requeridUserPassword,
-        requeridUserName,
-        requeridNumber,
+        requiredUserPassword,
+        requiredUserName,
+        requiredNumber,
         includedeleted,
         firesbaseUid,
 
@@ -26,19 +26,19 @@ module.exports = async payload =>{
     const userData = {};
 
     // validador de existencia
-    if(requeridUserName) {
+    if(requiredUserName) {
         if(!name){
             return { error: true, msg: "usuario debe tener un nombre."}
         }
         userData.name = name;
     }
-    if(requeridUserPassword){
+    if(requiredUserPassword){
         if(!password){
             return { error: true, msg: "usuario debe tener una contraseña."}
         }
         userData.password = password;
     }
-    if(requeridNumber){
+    if(requiredNumber){
         if(!phoneNumber){
             return {error: true, msg: "usuario debe tener un numero de telefono."}
         }
@@ -59,7 +59,7 @@ module.exports = async payload =>{
         userData.email = email;
     }
 
-    userData.birtData = birtData
+    userData.birthDate = birthDate
     userData.profilePinture = profilePinture
     userData.roleId = roleId
     userData.genderId = genderId
